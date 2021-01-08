@@ -449,7 +449,7 @@ const buildCollectionType = model => {
       const resolver = buildQuery(pluralName, resolverOpts);
       _.merge(localSchema, {
         query: {
-          [`${pluralName}${FIND_QUERY_ARGUMENTS}`]: `[${model.globalId}]`,
+          [`${pluralName}${FIND_QUERY_ARGUMENTS}`]: `[${model.globalId}!]!`,
         },
         resolvers: {
           Query: {
